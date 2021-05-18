@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <div id='parent'>
+        <p id='child'>事件</p>
+    </div> -->
+    <div id='root'>
+        <div id='parent'>
+            <p id='child'>事件</p>
+        </div>
+    </div>
+
+</body>
+<script>
+    let root = document.getElementById('root')
+    let parent = document.getElementById('parent')
+    let child = document.getElementById('child')
+    // document.addEventListener('click', dispatchEvent)
+    // function dispatchEvent(event) {
+    //     let paths = []
+    //     let current = event.target
+    //     while (current) {
+    //         paths.push(current)
+    //         current = current.parentNode
+    //     }
+    //     for (let i = paths.length - 1; i >= 0; i--) {
+    //         let handle = paths[i].onClickCapture
+    //         handle && handle()
+    //     }
+    //     for (let i = 0; i < paths.length; i++) {
+    //         let handle = paths[i].onClick
+    //         handle && handle()
+    //     }
+    // }
+    function dispatchEvent(event, useCapture) {
+        let paths = []
+        let current = event.target
+        while (current) {
+            paths.push(current)
+            current = current.parentNode
+        }
+        if (useCapture) {
+            for (let i = paths.length - 1; i >= 0; i--) {
+                let handle = paths[i].onClickCapture
+                handle && handle()
+            }
+        } else {
+            for (let i = 0; i < paths.length; i++) {
+                let handle = paths[i].onClick
+                handle && handle()
+            }
+        }
+    }
+    // document.addEventListener('click', dispatchEvent)
+    root.addEventListener('click', (e) => dispatchEvent(e, true), true)
+    root.addEventListener('click', (e) => dispatchEvent(e, false))
+
+    parent.addEventListener(
+        "click",
+        () => {
+            console.log("父元素原生事件捕获");
+        },
+        true
+    );
+    parent.addEventListener("click", () => {
+        console.log("父元素原生事件冒泡");
+    });
+    child.addEventListener(
+        "click",
+        () => {
+            console.log("子元素原生事件捕获");
+        },
+        true
+    );
+    child.addEventListener("click", () => {
+        console.log("子元素原生事件冒泡");
+    });
+    
+    document.addEventListener(
+        "click",
+        function () {
+            console.log("document 捕获");
+        },
+        true
+    );
+    document.addEventListener("click", function () {
+        console.log("document 冒泡");
+    });
+
+    parent.onClick = function () {
+        console.log("父组件React事件冒泡");
+    };
+    parent.onClickCapture = () => {
+        console.log("父组件React事件捕获");
+    };
+    child.onClick = function () {
+        console.log("子组件React事件冒泡");
+    };
+    child.onClickCapture = () => {
+        console.log("子组件React事件捕获");
+    };
+</script>
+
+</html>
