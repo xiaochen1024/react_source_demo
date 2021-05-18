@@ -7,7 +7,7 @@
 
 ### demos：视频教程的调试demo
 
-* cd demos
+* cd demo
 * npm install
 * npm link react react-dom
 * npm start
