@@ -37,7 +37,7 @@ function Show({ resource }) {
   return <h3>{data}</h3>;
 }
 
-export default function Demo10() {
+export default function App() {
   const [data] = useState(fetchData());
 
   return (

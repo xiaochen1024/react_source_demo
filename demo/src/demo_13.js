@@ -1,6 +1,6 @@
 import React from "react";
 
-export default class Demo13 extends React.Component {
+export default class App extends React.Component {
   state = { show: false };
   componentDidMount() {
     document.addEventListener("click", () => {

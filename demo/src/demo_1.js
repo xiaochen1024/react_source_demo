@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function Demo1() {
+export default function App() {
   const [toggle, setToggle] = useState(true);
 
   //没有加key

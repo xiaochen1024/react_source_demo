@@ -13,7 +13,7 @@ const ContextComp = (props, ref) => {
   );
 };
 
-export default function Demo7() {
+export default function App() {
   const [name, setName] = useState("xiao");
 
   return (
@@ -50,8 +50,10 @@ export default function Demo7() {
 //   return <Consumer>{(value) => <p>value: {value}</p>}</Consumer>;
 // }
 
-// export default () => (
-//   <Parent>
-//     <Child />
-//   </Parent>
-// );
+// export default function App() {
+//   return (
+//     <Parent>
+//       <Child />
+//     </Parent>
+//   );
+// }

@@ -1,14 +1,13 @@
 import React from "react";
 import { unstable_batchedUpdates } from "react-dom";
 
-export default class Demo9 extends React.Component {
+export default class App extends React.Component {
   state = {
     num: 0,
   };
   updateNum = () => {
     console.log("before", this.state.num);
 
-    // this.setState({ num: this.state.num + 1 });
     // this.setState({ num: this.state.num + 1 });
     // this.setState({ num: this.state.num + 1 });
     // console.log("after", this.state.num);

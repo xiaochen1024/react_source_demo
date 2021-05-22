@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 
-export default function Demo8() {
+export default function App() {
   const buttonRef = useRef(null);
   const [count, updateCount] = useState(0);
 
@@ -11,8 +11,8 @@ export default function Demo8() {
 
   useEffect(() => {
     const button = buttonRef.current;
-    setTimeout(() => updateCount(1), 2000);
-    setTimeout(() => button.click(), 2040);
+    setTimeout(() => updateCount(1), 1000);
+    setTimeout(() => button.click(), 1040);
   }, []);
   console.log('count', count)
   return (

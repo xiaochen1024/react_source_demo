@@ -1,6 +1,6 @@
 import React from "react";
 
-export default class Demo11 extends React.Component {
+export default class App extends React.Component {
   parentRef = React.createRef();
   childRef = React.createRef();
   componentDidMount() {

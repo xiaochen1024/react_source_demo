@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Demo6() {
+export default function App() {
   return (
     <div>
       {Array(4000)

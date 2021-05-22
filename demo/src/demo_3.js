@@ -1,6 +1,6 @@
 import React, { useState, useLayoutEffect } from "react";
 
-export default function Demo3() {
+export default function App() {
   const [count, setCount] = useState(0);
   useLayoutEffect(() => {
     if (count === 1) {

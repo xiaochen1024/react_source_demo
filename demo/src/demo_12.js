@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Demo12() {
+export default function App() {
   const handerClick = () => {
     console.log(1);
   };
