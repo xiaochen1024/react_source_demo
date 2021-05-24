@@ -11,7 +11,7 @@
 * npm install
 * npm link react react-dom
 * npm start
-* 修改App.js的引用demo文件即可
+* 修改index.js的引用demo文件即可
 
 ### reactMini：遵循react17源码，手写react迷你项目
 
