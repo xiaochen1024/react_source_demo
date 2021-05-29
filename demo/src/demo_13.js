@@ -16,7 +16,7 @@ export default class App extends React.Component {
     return (
       <div>
         <button onClick={this.handleClick}>显示</button>
-        {this.state.show && <div onClick={(e) => e.nativeEvent.stopImmediatePropagation()}>modal</div>}
+        {this.state.show && <div>modal</div>}
       </div>
     );
   }
